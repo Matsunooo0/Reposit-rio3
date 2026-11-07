@@ -1,0 +1,51 @@
+.cartoes {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    padding: 50px;
+}
+
+.cartao {
+    width: 250px;
+    height: 300px;
+    perspective: 1000px;
+}
+
+.cartao-interno {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.cartao-frente,
+.cartao-verso {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.cartao-frente {
+    background: #2563eb;
+    color: white;
+}
+
+.cartao-verso {
+    background: #1e293b;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.cartao:hover .cartao-interno {
+    transform: rotateY(180deg);
+}
